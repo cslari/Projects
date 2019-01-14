@@ -41,17 +41,46 @@ void qcheck(int[8] queens){
 			break;
 		}
 	}
-	if(checkStatus){
-		// do diagonal check
-		for(int i=0; i<queens.size(); i++){
-			// refine logic here
-			if((queens[i]+i) = queens[i+1]){
-				checkStatus = false;
-			}
-			if((queens[i]-i) == queens[i+1]){
+	
+//	if(queens[0] == (queens[1] + 1))
+//	if(queens[0] == (queens[1] - 1))
+//	if(queens[0] == (queens[2] + 2))
+//	if(queens[0] == (queens[2] - 2))
+//		...
+//	if(queens[0] == (queens[8] + 8))
+//	if(queens[0] == (queens[8] - 8))
 
-			}
-		}
+
+//	if(queens[1] == (queens[0] - 1)) // has already been checked in queens[0] cases
+//	if(queens[1] == (queens[2] + 1))
+//	if(queens[1] == (queens[2] - 1))
+//	if(queens[1] == (queens[8] + 7))
+//	if(queens[1] == (queens[8] - 7))
+
+//	formula:
+//	if(queens[index] == ( queens[checkIndex](+/-)(checkIndex - index) ) )
+//	
+//	for(int i=0; i<queens.size(); i++){
+//		index = i;
+//		checkIndex = queens.size();
+//		while(checkIndex > index){
+//			if(queens[index] == ( queens[checkIndex]+(checkIndex - index) ) ){
+//				// set check status to false & return
+//			}
+//			checkIndex--;
+//		}
+//	}
+//	if(checkStatus){
+//		// do diagonal check
+//		for(int i=0; i<queens.size(); i++){
+//			// refine logic here
+//			if((queens[i]+i) = queens[i+1]){
+//				checkStatus = false;
+//			}
+//			if((queens[i]-i) == queens[i+1]){
+
+//			}
+//		}
 	}
 	
 	return;
